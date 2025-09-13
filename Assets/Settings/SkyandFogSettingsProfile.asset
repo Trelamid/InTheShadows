@@ -91,7 +91,7 @@ MonoBehaviour:
     m_Value: 55261.973
   aerosolDensity:
     m_OverrideState: 1
-    m_Value: 0.222
+    m_Value: 0.505
   aerosolTint:
     m_OverrideState: 0
     m_Value: {r: 0.9, g: 0.9, b: 0.9, a: 1}
@@ -204,13 +204,13 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 57.8
+    m_Value: 3.4
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 180.5
+    m_Value: 155.1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 191.4
+    m_Value: 116.5
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -331,25 +331,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   quality:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3
   rayTracing:
     m_OverrideState: 0
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.54
+    m_Value: 1.4
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0.306
   radius:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 2.21
   spatialBilateralAggressiveness:
     m_OverrideState: 1
     m_Value: 0.752
   temporalAccumulation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   ghostingReduction:
     m_OverrideState: 1
