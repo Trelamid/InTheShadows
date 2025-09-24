@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class UILevelManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class UILevelManager : MonoBehaviour
     [SerializeField]private List<LevelData> levelDatas;
 
     private int _levelNow;
+    private List<GameObject> _cells = new List<GameObject>();
+    private string SavePath => Path.Combine(Application.persistentDataPath, "playerProgress.json");
 
     public void OnOpen(bool test)
     {
@@ -24,7 +27,7 @@ public class UILevelManager : MonoBehaviour
 
     public void OnClose()
     {
-        
+        DeleteCells();
     }
 
     public void OnChoose(LevelData levelData)
@@ -34,8 +37,26 @@ public class UILevelManager : MonoBehaviour
 
     private void GetPlayerLevel()
     {
-        _levelNow = 5;
+        if (File.Exists(SavePath))
+        {
+            string json = File.ReadAllText(SavePath);
+            var progress = JsonUtility.FromJson<PlayerProgress>(json);
+            _levelNow = progress.currentLevel;
+        }
+        else
+        {
+            var progress = new PlayerProgress { currentLevel = 0 };
+            SavePlayerLevel(progress);
+            _levelNow = progress.currentLevel;
+        }
     }
+    
+    public void SavePlayerLevel(PlayerProgress progress)
+    {
+        string json = JsonUtility.ToJson(progress, true);
+        File.WriteAllText(SavePath, json);
+    }
+
     private void GenerateLevelCells()
     {
         foreach (var level in levelDatas)
@@ -55,11 +76,21 @@ public class UILevelManager : MonoBehaviour
             }
 
             var cell = Instantiate(levelCellPrefab, parent.transform).GetComponent<LevelCell>();
+            _cells.Add(cell.gameObject);
             cell.Init(level, 
                 (level.levelNumber <= _levelNow ? 
                     (level.levelNumber == _levelNow ? LevelStatus.Next:LevelStatus.Open) 
                     : LevelStatus.Close)
-                , this); //TODO наприсать подтягивание уровня из json
+                , this);
         }
+    }
+
+    private void DeleteCells()
+    {
+        foreach (var cell in _cells)
+        {
+            GameObject.Destroy(cell);
+        }
+        _cells.Clear();
     }
 }

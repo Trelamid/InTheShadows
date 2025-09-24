@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617d736d1abfb4adabdcd367c202c5f6, type: 3}
   m_Name: Level8
   m_EditorClassIdentifier: 
-  levelIcon: {fileID: 968149534, guid: 9016b312ced29404bbaf91865bab90eb, type: 3}
-  levelShadowIcon: {fileID: -991243819, guid: 71b25b9827bb79843bcd1f5bead9418f, type: 3}
+  levelIcon: {fileID: 716403146, guid: 22116ef8217574732987b50fad33f860, type: 3}
+  levelShadowIcon: {fileID: -59738364, guid: 22116ef8217574732987b50fad33f860, type: 3}
   levelName: Answer
   levelNumber: 8
   winConditions:
