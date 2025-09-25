@@ -16,11 +16,14 @@ MonoBehaviour:
   levelShadowIcon: {fileID: 752715934, guid: 71b25b9827bb79843bcd1f5bead9418f, type: 3}
   levelName: TeaPot
   levelNumber: 1
+  envSceneNumber: 2
+  fenvSceneNumber: 0
+  NextLevelData: {fileID: 11400000, guid: 6b35f324d59924c2ca6320e7f9ac47f3, type: 2}
   winConditions:
   - prefab: {fileID: 3599279546831554948, guid: 62ecb38e893dd2640815685af615bd50, type: 3}
     allowedMoves: 2
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
+    targetRotation: {x: 72.1, y: 0, z: 0}
+    toleranceRotation: 1
     checkPosition: 0
     targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
+    tolerancePosition: 1

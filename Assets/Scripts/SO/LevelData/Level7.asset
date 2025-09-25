@@ -16,18 +16,22 @@ MonoBehaviour:
   levelShadowIcon: {fileID: 71388153, guid: 71b25b9827bb79843bcd1f5bead9418f, type: 3}
   levelName: Globus
   levelNumber: 7
+  envSceneNumber: 4
+  NextLevelData: {fileID: 11400000, guid: 5a240f2e2f690416cab212a5d97765a1, type: 2}
   winConditions:
   - prefab: {fileID: 1752080265423774168, guid: df4650619827ce349b96696d63fb1213, type: 3}
-    allowedMoves: -1
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
-    checkPosition: 1
-    targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
-  - prefab: {fileID: 7977990481107446613, guid: 68b336a873e9aa645b691bbe494afe4d, type: 3}
     allowedMoves: 3
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
+    targetRotation: {x: 84.1, y: 50.61, z: 0}
+    targetRotationQ: {x: 0, y: 0, z: 0, w: 0}
+    toleranceRotation: 20
     checkPosition: 0
     targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
+    tolerancePosition: 0.5
+  - prefab: {fileID: 7977990481107446613, guid: 68b336a873e9aa645b691bbe494afe4d, type: 3}
+    allowedMoves: -1
+    targetRotation: {x: -90, y: 63.29, z: 0}
+    targetRotationQ: {x: 0, y: 0, z: 0, w: 0}
+    toleranceRotation: 20
+    checkPosition: 1
+    targetPosition: {x: 0, y: 0, z: 0}
+    tolerancePosition: 1

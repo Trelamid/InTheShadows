@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UILevelManager : MonoBehaviour
 {
@@ -10,10 +12,21 @@ public class UILevelManager : MonoBehaviour
     [SerializeField]private GameObject horizontal2;
     [SerializeField]private GameObject horizontal3;
     [SerializeField]private List<LevelData> levelDatas;
+    
+    // [SerializeField]private Button 
 
     private int _levelNow;
     private List<GameObject> _cells = new List<GameObject>();
     private string SavePath => Path.Combine(Application.persistentDataPath, "playerProgress.json");
+
+    // private void Awake()
+    // {
+    //     if (LevelLoader.NextLevel)
+    //     {
+    //         
+    //         LevelLoader.NextLevel = false;
+    //     }
+    // }
 
     public void OnOpen(bool test)
     {
@@ -22,17 +35,25 @@ public class UILevelManager : MonoBehaviour
         else
             GetPlayerLevel();
         
+        LevelLoader.TestMode = test;
         GenerateLevelCells();
     }
 
     public void OnClose()
     {
         DeleteCells();
+        LevelLoader.TestMode = false;
     }
 
     public void OnChoose(LevelData levelData)
     {
-        //StartLevel();
+        StartLevel(levelData);
+    }
+
+    private void StartLevel(LevelData levelData)
+    {
+        LevelLoader.CurrentLevel = levelData;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     private void GetPlayerLevel()

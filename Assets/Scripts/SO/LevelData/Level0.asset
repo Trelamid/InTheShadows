@@ -16,11 +16,14 @@ MonoBehaviour:
   levelShadowIcon: {fileID: -752072890, guid: 71b25b9827bb79843bcd1f5bead9418f, type: 3}
   levelName: Elephant
   levelNumber: 0
+  envSceneNumber: 2
+  fenvSceneNumber: 0
+  NextLevelData: {fileID: 11400000, guid: 2a5a3bbdef1e94303b1e6738cf7ad4d8, type: 2}
   winConditions:
   - prefab: {fileID: 3292346054781961814, guid: 74798b074190fd54f94d46dcdfc4d010, type: 3}
     allowedMoves: 1
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
+    targetRotation: {x: 0, y: 153.7, z: 0}
+    toleranceRotation: 1
     checkPosition: 0
     targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
+    tolerancePosition: 1

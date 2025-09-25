@@ -1280,7 +1280,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 435, y: -646.6667}
-  m_SizeDelta: {x: 870, y: 150}
+  m_SizeDelta: {x: 580.0172, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415833901
 MonoBehaviour:
@@ -1432,50 +1432,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451663586}
   m_CullTransparentMesh: 1
---- !u!1 &463655692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 463655693}
-  - component: {fileID: 463655694}
-  m_Layer: 0
-  m_Name: MenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &463655693
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463655692}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &463655694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463655692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba333c65cfcf14103ae9a096043cd411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &531223998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1549,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd1ffe074414a450f859310b9dcc3b16, type: 2}
   - {fileID: 11400000, guid: 2ad18a489d84441b894399145510481a, type: 2}
   - {fileID: 11400000, guid: df0d5e85c81404778bb1be7371939677, type: 2}
-  - {fileID: 11400000, guid: 517e549c413d74a8f9bbfc5ad6d2883a, type: 2}
   - {fileID: 11400000, guid: e0338fb57ca31400bb02695b4a889111, type: 2}
   - {fileID: 11400000, guid: 5a240f2e2f690416cab212a5d97765a1, type: 2}
 --- !u!4 &645311560
@@ -5627,6 +5582,5 @@ SceneRoots:
   - {fileID: 2013410475}
   - {fileID: 53187231}
   - {fileID: 1413130397}
-  - {fileID: 463655693}
   - {fileID: 645311560}
   - {fileID: 2073870574}

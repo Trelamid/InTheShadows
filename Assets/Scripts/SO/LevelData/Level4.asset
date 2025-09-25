@@ -16,11 +16,14 @@ MonoBehaviour:
   levelShadowIcon: {fileID: -815434213, guid: 71b25b9827bb79843bcd1f5bead9418f, type: 3}
   levelName: Base
   levelNumber: 4
+  envSceneNumber: 3
+  NextLevelData: {fileID: 11400000, guid: df0d5e85c81404778bb1be7371939677, type: 2}
   winConditions:
   - prefab: {fileID: 7977990481107446613, guid: 68b336a873e9aa645b691bbe494afe4d, type: 3}
-    allowedMoves: 3
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
-    checkPosition: 0
+    allowedMoves: -1
+    targetRotation: {x: -90, y: 63.29, z: 0}
+    targetRotationQ: {x: 0, y: 0, z: 0, w: 0}
+    toleranceRotation: 20
+    checkPosition: 1
     targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
+    tolerancePosition: 20

@@ -16,18 +16,22 @@ MonoBehaviour:
   levelShadowIcon: {fileID: -59738364, guid: 22116ef8217574732987b50fad33f860, type: 3}
   levelName: Answer
   levelNumber: 8
+  envSceneNumber: 4
+  NextLevelData: {fileID: 0}
   winConditions:
   - prefab: {fileID: 2507366534905816367, guid: fee6432aac801744782070690eb07e0c, type: 3}
     allowedMoves: 3
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
+    targetRotation: {x: 50, y: 100, z: 0}
+    targetRotationQ: {x: 0, y: 0, z: 0, w: 0}
+    toleranceRotation: 20
     checkPosition: 0
     targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
+    tolerancePosition: 0.5
   - prefab: {fileID: 7120230449018960869, guid: 8ba4f8fa53cdea84dbf09803d4883b39, type: 3}
     allowedMoves: -1
-    targetRotation: {x: 0, y: 0, z: 0}
-    toleranceRotation: 0.1
+    targetRotation: {x: 168, y: 63, z: 0}
+    targetRotationQ: {x: 0, y: 0, z: 0, w: 0}
+    toleranceRotation: 20
     checkPosition: 1
-    targetPosition: {x: 0, y: 0, z: 0}
-    tolerancePosition: 0.1
+    targetPosition: {x: 1.42, y: 0, z: -1.78}
+    tolerancePosition: 0.5

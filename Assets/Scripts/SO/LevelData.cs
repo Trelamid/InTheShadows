@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "LevelData", menuName = "Scriptable Objects/LevelData")]
 public class LevelData : ScriptableObject
@@ -8,7 +9,9 @@ public class LevelData : ScriptableObject
 	public Sprite levelShadowIcon;       // Иконка тени уровня
 	public string levelName;       // Название уровня
 	public int levelNumber;        // Номер уровня
-
+	public int envSceneNumber;
+	public LevelData NextLevelData;
+	
 	[System.Flags]
 	public enum AllowedMoves
 	{
@@ -25,11 +28,12 @@ public class LevelData : ScriptableObject
 		public GameObject prefab; // Префаб фигуры
 		public AllowedMoves allowedMoves;
 		public Vector3 targetRotation; // Целевая позиция для победы
-		public float toleranceRotation = 0.1f; // Допустимая погрешность
+		public Quaternion targetRotationQ; // Целевая позиция для победы
+		public float toleranceRotation = 20f; // Допустимая погрешность
 		
 		public bool checkPosition; //Нужно ли проверять позицию у фигуры
 		public Vector3 targetPosition; // Целевая позиция для победы
-		public float tolerancePosition = 0.1f; // Допустимая погрешность
+		public float tolerancePosition = 1f; // Допустимая погрешность
 	}
 
 	[Header("Условия победы")]
