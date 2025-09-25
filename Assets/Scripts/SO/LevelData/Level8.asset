@@ -33,5 +33,5 @@ MonoBehaviour:
     targetRotationQ: {x: 0, y: 0, z: 0, w: 0}
     toleranceRotation: 20
     checkPosition: 1
-    targetPosition: {x: 1.42, y: 0, z: -1.78}
-    tolerancePosition: 0.5
+    targetPosition: {x: 2.56436, y: 0, z: -0.843}
+    tolerancePosition: 0.8

@@ -29,8 +29,9 @@ public class GameManager : MonoBehaviour
     private string SavePath => Path.Combine(Application.persistentDataPath, "playerProgress.json");
 
     private bool _isDragging;
-    private bool _positionMode; // false = rotate, true = move
-    private int _rotationHorVerMode = 0;
+    private bool _positionMode;
+    private int _figuresCountNeed;
+    // private int _rotationHorVerMode = 0;
     private bool _isFinish;
 
     private void Awake()
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
             Debug.LogError("LevelData is null! Убедись, что LevelLoader.CurrentLevel заполнен.");
             return;
         }
+
+        _figuresCountNeed = _currentLevelData.winConditions.Length;
 
         _clickAction      = clickActionRef.action;
         _mouseDeltaAction = mouseDeltaRef.action;
@@ -137,7 +140,7 @@ public class GameManager : MonoBehaviour
         _isDragging = false;
         _activeFigure = null;
         _activeCondition = null;
-        _rotationHorVerMode = 0;
+        // _rotationHorVerMode = 0;
     }
 
     // ======================= Движение мыши =======================
@@ -147,13 +150,13 @@ public class GameManager : MonoBehaviour
 
         Vector2 delta = ctx.ReadValue<Vector2>();
 
-        if (_rotationHorVerMode == 0 && !_positionMode)
-        {
-            if (delta.x > delta.y)
-                _rotationHorVerMode = 1;
-            else
-                _rotationHorVerMode = 2;
-        }
+        // if (_rotationHorVerMode == 0 && !_positionMode)
+        // {
+        //     if (delta.x > delta.y)
+        //         _rotationHorVerMode = 1;
+        //     else
+        //         _rotationHorVerMode = 2;
+        // }
 
         if (_positionMode)
             ApplyTranslation(delta);
@@ -205,13 +208,11 @@ public class GameManager : MonoBehaviour
         {
             _activeFigure.GetComponent<Collider>().enabled = false;
             _isFinish = true;
-            Debug.Log(_currentLevelData.winConditions.Length);
 
             StartCoroutine(SnapToTarget(_activeFigure, _activeCondition.targetRotation, targetQ, _activeCondition,
-                _currentLevelData.winConditions.Length <= 1));
+                _figuresCountNeed <= 1));
 
-            if (_currentLevelData.winConditions.Length > 1)
-                RemoveCondition(_activeCondition);
+            _figuresCountNeed--;
 
             _activeFigure = null;
             _activeCondition = null;
@@ -256,13 +257,6 @@ public class GameManager : MonoBehaviour
         else
             _isFinish = false;
     }
-
-    public void RemoveCondition(LevelData.WinCondition conditionToRemove)
-    {
-        _currentLevelData.winConditions = _currentLevelData.winConditions
-            .Where(c => c != conditionToRemove)
-            .ToArray();
-    }    
     
     private void ApplyTranslation(Vector2 delta)
     {
