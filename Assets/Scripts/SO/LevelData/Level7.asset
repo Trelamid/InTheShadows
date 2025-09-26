@@ -15,7 +15,7 @@ MonoBehaviour:
   levelIcon: {fileID: 71388153, guid: 9016b312ced29404bbaf91865bab90eb, type: 3}
   levelShadowIcon: {fileID: 71388153, guid: 71b25b9827bb79843bcd1f5bead9418f, type: 3}
   levelName: Globus
-  levelNumber: 7
+  levelNumber: 6
   envSceneNumber: 4
   NextLevelData: {fileID: 11400000, guid: 5a240f2e2f690416cab212a5d97765a1, type: 2}
   winConditions:

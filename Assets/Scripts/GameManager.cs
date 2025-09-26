@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputActionReference rotateModeRef;  // переключение в режим вращения
     [SerializeField] private InputActionReference moveModeRef;    // переключение в режим движения
     [SerializeField] private GameObject finshUI;
+    [SerializeField] private GameObject finshEGG;
+
+    [SerializeField] private AudioSource _audio;
 
     private Camera _mainCamera;
     private LevelData _currentLevelData;
@@ -84,14 +88,6 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (File.Exists(SavePath) && !LevelLoader.TestMode)
-        {
-            string json = File.ReadAllText(SavePath);
-            var progress = JsonUtility.FromJson<PlayerProgress>(json);
-            progress = new PlayerProgress { currentLevel = progress.currentLevel+1 };
-            SavePlayerLevel(progress);
-        }
-
         _clickAction.performed   -= OnClick;
         _clickAction.canceled    -= OnRelease;
         _mouseDeltaAction.performed -= OnMouseDrag;
@@ -317,6 +313,18 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelCompleted()
     {
+        if (File.Exists(SavePath) && !LevelLoader.TestMode)
+        {
+            string json = File.ReadAllText(SavePath);
+            var progress = JsonUtility.FromJson<PlayerProgress>(json);
+            progress = new PlayerProgress { currentLevel = progress.currentLevel+1 };
+            SavePlayerLevel(progress);
+        }
+        
+        _audio.Play();
+        
         finshUI.SetActive(true);
+        if(_currentLevelData.NextLevelData == null)
+            finshEGG.SetActive(true);
     }
 }
